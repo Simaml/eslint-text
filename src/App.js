@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
+import { HashRouter, Route, Switch, BrowserRouter } from 'react-router-dom';
+import Home from './component/Home';
+import Product from './component/Product';
 
 class App extends Component {
     render() {
-        const sum = 10;
+
         return (
-            <div>
-                你拥有老婆个数 {sum}
-            </div>
+            <HashRouter history={BrowserRouter}>
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route exact path='/product' component={Product} />
+                </Switch>
+            </HashRouter>
         );
     }
 }
