@@ -20,6 +20,10 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
+                        plugins: [
+                            ['import', { libraryName: 'antd', style: true }]  // `style: true` 会加载 less 文件  
+                        ],
+                        compact: true,
                         presets: [
                             "@babel/react"
                         ]
